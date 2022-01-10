@@ -24,8 +24,10 @@ fillMenu(types)
 
 function render(data) {
    result.innerHTML = `
-         <p>${data.activity}</p>
-         <p>${data.type}</p>
+         <div class="item">
+            <p>${data.activity}</p>
+            <p>${data.type}</p>
+         </div>
       `
 }
 
@@ -42,7 +44,6 @@ filter.onchange = event => {
    event.target.value === 'all'
       ? (url = 'http://www.boredapi.com/api/activity/')
       : (url = `http://www.boredapi.com/api/activity/?type=${event.target.value}`)
-   request(url)
 }
 
 button.onclick = () => {

@@ -1,103 +1,121 @@
 body {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   min-height: 100vh;
    margin: 0;
    padding: 0;
+   background-color: #f4f4f4;
    font-family: 'Nunito Sans', sans-serif;
 }
 header {
+   background-color: #fff;
    width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+   padding: 15px 0;
+   text-align: center;
    & h1 {
+      color: #333;
       margin: 0;
       padding: 0;
       font-size: 37px;
    }
-   & .filter {
-      position: relative;
-      display: flex;
-      gap: 15px;
-      & select {
-         appearance: none;
-         font-size: 22px;
-         padding: 6px;
-         border-radius: 8px;
-      }
-      & span {
-         font-weight: 600;
-         font-size: 26px;
-      }
-      &::after {
-         content: '\25BC';
-         color: #fff;
-         position: absolute;
-         z-index: 20;
-         top: 25%;
-         right: 12px;
-         pointer-events: none;
-      }
-   }
 }
-button,
-select {
-   letter-spacing: 0.7px;
-   border: none;
+.filter {
+   box-shadow: 1px 5px 16px #cacaca;
+   position: relative;
    color: #fff;
-   background-color: #005bea;
-   transition: background-color 0.2s;
-   &:hover {
-      background-color: rgba(0, 90, 234, 0.85);
+   border-radius: 8px;
+   & select {
+      border: solid 3px #7391c8;
+      appearance: none;
+      background-color: #fff;
+      color: #333;
+      font-size: 28px;
+      width: 225px;
+      padding: 8px;
+      border-radius: 8px;
+      transition: background-color 0.2s;
+      &:hover {
+         background-color: #f4f4f4;
+      }
+   }
+   &::after {
+      content: '\25BC';
+      color: #fff;
+      background-color: #7391c8;
+      position: absolute;
+      padding: 16.5px;
+      border-radius: 0 8px 8px 0;
+      top: 0;
+      right: 0;
+      pointer-events: none;
+      transition: background-color 0.2s, padding-top 0.2s, padding-bottom 0.2s;
+   }
+   &:hover::after {
+      padding-top: 20px;
+      padding-bottom: 13px;
    }
 }
-.buttonWrapper {
+button {
+   box-shadow: 1px 5px 16px #cacaca;
    display: flex;
    align-items: center;
    justify-content: center;
-   & button {
-      height: 185px;
-      width: 185px;
-      font-size: 48px;
-      border-radius: 50%;
-      margin: 50px 0;
+   height: 120px;
+   width: 120px;
+   margin: 50px 0;
+   letter-spacing: 0.7px;
+   border-radius: 50%;
+   border: none;
+   background-color: #7391c8;
+   color: #fff;
+   transition: background-color 0.2s;
+   &:hover {
+      background-color: rgba(115, 145, 200, 0.8);
    }
 }
+
 .wrapper {
-   border-radius: 8px;
-   width: 520px;
-   min-height: 470px;
    padding: 15px;
    overflow: hidden;
    display: flex;
-   flex-direction: column;
+   justify-content: center;
    align-items: center;
+   flex-direction: column;
+}
+.btnWrapper {
+   display: flex;
+   align-items: center;
+   gap: 50px;
 }
 .result {
    display: flex;
    flex-direction: column;
    align-items: flex-start;
    justify-content: center;
-   font-size: 32px;
-   & p {
-      margin: 0;
-   }
-   & p:first-child {
-      font-weight: 600;
-   }
-   & p:last-child {
-      font-size: 28px;
-      margin-top: 12px;
+   font-size: 38px;
+   color: #333;
+   & .item {
+      background-color: #fff;
+      border: solid 5px #7391c8;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 1px 5px 16px #cacaca;
+      & p {
+         margin: 0;
+      }
+      & p:first-child {
+         font-weight: 600;
+      }
+      & p:last-child {
+         font-size: 28px;
+         margin-top: 12px;
+      }
    }
 }
 .loader {
+   box-shadow: 1px 5px 16px #cacaca;
    width: 80px;
    height: 80px;
    border-radius: 100%;
    position: relative;
-   // margin: 0 auto 45px;
+   margin-bottom: 10px;
 
    &:before,
    &:after {
@@ -109,7 +127,7 @@ select {
       height: 100%;
       border-radius: 100%;
       border: 8px solid transparent;
-      border-top-color: #005bea;
+      border-top-color: #7391c8;
    }
    &:before {
       z-index: 100;
@@ -153,33 +171,14 @@ select {
          margin-bottom: 70px;
       }
    }
+   .result {
+      font-size: 35px;
+   }
    .wrapper {
       padding: 20px;
-      background-color: #fff;
    }
-}
-@media screen and (max-width: 320px) {
-   header {
-      & h1 {
-         font-size: 30px;
-         width: 100px;
-      }
-      & .filter {
-         gap: 5px;
-         & span {
-            display: none;
-         }
-         & select {
-            width: 170px;
-         }
-      }
-   }
-   .buttonWrapper {
-      & button {
-         font-size: 48px;
-         width: 180px;
-         height: 180px;
-         margin-bottom: 50px;
-      }
+   .btnWrapper {
+      flex-direction: column;
+      gap: 0;
    }
 }
