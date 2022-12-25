@@ -3,17 +3,7 @@ const result = document.querySelector('.result')
 const button = document.querySelector('button')
 
 let url = 'http://www.boredapi.com/api/activity/'
-const types = [
-   'education',
-   'recreational',
-   'social',
-   'diy',
-   'charity',
-   'cooking',
-   'relaxation',
-   'music',
-   'busywork',
-]
+const types = ['education', 'recreational', 'social', 'diy', 'charity', 'cooking', 'relaxation', 'music', 'busywork']
 
 function fillMenu(data) {
    let str = ''
@@ -42,8 +32,8 @@ function request(url) {
 
 filter.onchange = event => {
    event.target.value === 'all'
-      ? (url = 'http://www.boredapi.com/api/activity/')
-      : (url = `http://www.boredapi.com/api/activity/?type=${event.target.value}`)
+      ? (url = 'https://www.boredapi.com/api/activity/')
+      : (url = `https://www.boredapi.com/api/activity/?type=${event.target.value}`)
 }
 
 button.onclick = () => {
