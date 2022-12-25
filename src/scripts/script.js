@@ -2,7 +2,7 @@ const filter = document.querySelector('select')
 const result = document.querySelector('.result')
 const button = document.querySelector('button')
 
-let url = 'http://www.boredapi.com/api/activity/'
+let url = 'https://www.boredapi.com/api/activity/'
 const types = ['education', 'recreational', 'social', 'diy', 'charity', 'cooking', 'relaxation', 'music', 'busywork']
 
 function fillMenu(data) {
