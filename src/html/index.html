@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
    <head>
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../play-circle-solid.svg" type="image/x-icon" />
+      <link rel="shortcut icon" href="../play.svg" type="image/x-icon" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
-         rel="stylesheet"
-      />
-      <title>IF BORED</title>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+      <title>Actify</title>
       <link rel="stylesheet" href="../styles/style.scss" />
    </head>
    <body>
       <header>
-         <h1>IF BORED</h1>
+         <h1>Actify</h1>
       </header>
       <div class="wrapper">
          <div class="btnWrapper">
@@ -25,25 +22,10 @@
                   <option value="" selected>all</option>
                </select>
             </div>
-            <button>
-               <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fas"
-                  data-icon="play-circle"
-                  class="svg-inline--fa fa-play-circle fa-w-16"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-               >
-                  <path
-                     fill="currentColor"
-                     d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"
-                  ></path>
-               </svg>
-            </button>
+            <button class="start"></button>
          </div>
          <div class="result"></div>
+         <button class="clearAll disabled"></button>
       </div>
       <script src="../scripts/script.js"></script>
    </body>
