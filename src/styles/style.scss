@@ -1,27 +1,30 @@
-$color-bg: #fff;
-$color-fill: #007aff;
-$color-fill--secondary: #fafafa;
-$color-fill--placeholder: #ebebeb;
-$color-text: #27272a;
-$color-text-secondary: #71717a;
-$color-border: #d4d4d8;
-$color-border--focus: #a5a5aa;
+:root {
+   --color-bg: #fff;
+   --color-fill: #007aff;
+   --color-fill--secondary: #fafafa;
+   --color-fill--placeholder: #ebebeb;
+   --color-text: #27272a;
+   --color-text-secondary: #71717a;
+   --color-border: #d4d4d8;
+   --color-border--focus: #a5a5aa;
+   --font-size: 18px;
+   --font-size--small: 14px;
+   --font-size--large: 24px;
+   --font-size--xl: 28px;
+}
 
-$font-size: 18px;
-$font-size--small: 14px;
-$font-size--large: 24px;
-$font-size--xl: 28px;
-
-// @media (prefers-color-scheme: dark) {
-//    $color-bg: #18181b;
-//    $color-fill: #007aff;
-//    $color-fill--secondary: #202025;
-//    $color-fill--placeholder: #2f2f2f;
-//    $color-text: #fff;
-//    $color-text-secondary: #71717a;
-//    $color-border: #52525b;
-//    $color-border--focus: #27272a;
-// }
+@media (prefers-color-scheme: dark) {
+   :root {
+      --color-bg: #18181b;
+      --color-fill: #007aff;
+      --color-fill--secondary: #202025;
+      --color-fill--placeholder: #2f2f2f;
+      --color-text: #ceced2;
+      --color-text-secondary: #71717a;
+      --color-border: #52525b;
+      --color-border--focus: #27272a;
+   }
+}
 
 * {
    box-sizing: border-box;
@@ -29,7 +32,7 @@ $font-size--xl: 28px;
 body {
    margin: 0;
    padding: 0;
-   background-color: $color-bg;
+   background-color: var(--color-bg);
    font-family: 'Nunito Sans', sans-serif;
 }
 header {
@@ -37,8 +40,8 @@ header {
    padding: 24px 0;
    text-align: center;
    & h1 {
-      color: $color-text;
-      font-size: $font-size--xl;
+      color: var(--color-text);
+      font-size: var(--font-size--xl);
       margin: 0;
       padding: 0;
    }
@@ -58,7 +61,7 @@ header {
    width: 35px;
    border-radius: 12px;
    border: none;
-   background-color: $color-fill;
+   background-color: var(--color-fill);
    transition: transform 0.1s;
    animation: show 0.1s ease-in-out;
    &:active {
@@ -67,21 +70,21 @@ header {
 }
 .filter {
    position: relative;
-   color: $color-bg;
+   color: var(--color-bg);
    border-radius: 12px;
    & select {
-      border: solid 1px $color-border;
+      border: solid 1px var(--color-border);
       appearance: none;
-      background-color: $color-bg;
-      color: $color-text;
-      font-size: $font-size--large;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-size: var(--font-size--large);
       width: 220px;
       margin: 0;
       padding: 8px 12px;
       border-radius: 12px;
       transition: border-color 0.1s;
       &:focus {
-         border-color: $color-border--focus;
+         border-color: var(--color-border--focus);
       }
    }
    &:hover::after {
@@ -90,6 +93,9 @@ header {
    &::after {
       content: '';
       background-image: url('../arrow-down.svg');
+      @media screen and (prefers-color-scheme: dark) {
+         filter: invert(1);
+      }
       background-repeat: no-repeat;
       position: absolute;
       right: 0;
@@ -112,7 +118,7 @@ header {
    width: 45px;
    border-radius: 12px;
    border: none;
-   background-color: $color-fill;
+   background-color: var(--color-fill);
    transition: transform 0.1s;
    &:active {
       transform: scale(0.95);
@@ -137,13 +143,13 @@ header {
    align-items: center;
    flex-direction: column;
    row-gap: 8px;
-   color: $color-text;
+   color: var(--color-text);
    & .item {
       &.removing {
          animation: removing 0.1s ease forwards;
       }
       width: 520px;
-      background-color: $color-fill--secondary;
+      background-color: var(--color-fill--secondary);
       border-radius: 12px;
       padding: 16px;
       & p {
@@ -151,12 +157,12 @@ header {
          animation: show 0.1s ease-in-out;
       }
       & p:first-child {
-         font-size: $font-size--large;
+         font-size: var(--font-size--large);
          font-weight: 700;
       }
       & p:last-child {
-         color: $color-text-secondary;
-         font-size: $font-size--small;
+         color: var(--color-text-secondary);
+         font-size: var(--font-size--small);
          margin-top: 2px;
       }
    }
@@ -164,7 +170,7 @@ header {
 .placeholder {
    width: 520px;
    height: 85px;
-   background-color: $color-fill--secondary;
+   background-color: var(--color-fill--secondary);
    border-radius: 12px;
    padding: 16px;
    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -176,14 +182,14 @@ header {
    & p:first-child {
       width: 100%;
       height: 30px;
-      background-color: $color-fill--placeholder;
+      background-color: var(--color-fill--placeholder);
       border-radius: 10px;
       animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
    }
    & p:last-child {
       width: 30%;
       height: 20px;
-      background-color: $color-fill--placeholder;
+      background-color: var(--color-fill--placeholder);
       border-radius: 10px;
       margin-top: 6px;
       animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
